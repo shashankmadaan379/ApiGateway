@@ -1,9 +1,9 @@
 const express=require("express");
 const morgan=require("morgan");
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const { rateLimit } = require('express-rate-limit')
+const { rateLimit } = require('express-rate-limit');
 const app=express();
-PORT=3005;
+const {PORT}=require("./config/serverConfig");
 const limiter = rateLimit({
 	windowMs: 2 * 60 * 1000, // 2 minutes
 	max:5
